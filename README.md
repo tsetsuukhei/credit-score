@@ -11,7 +11,8 @@ This repository contains a Docker Compose setup for a client-server application.
     ├── server
     │   ├── Dockerfile
     │   └── ... (server application files)
-    └── docker-compose.yml
+    ├── docker-compose.yml
+    └── credit-score.ipynb (model training)
 
 ### Prerequisites
 
@@ -34,5 +35,20 @@ docker-compose up
 
 ### Ports
 
-Client: 3000 on the host maps to 3000 in the client container.
-Server: 8000 on the host maps to 8000 in the server container.
+- Client: 3000 on the host maps to 3000 in the client container.
+- Server: 8000 on the host maps to 8000 in the server container.
+
+### Choice of Dataset
+
+Choice of dataset from Kaggle - [Credit Score Classification](https://www.kaggle.com/datasets/parisrohan/credit-score-classification/).
+
+- After looking at many datasets and changing the dataset twice, I've decided to work on the Credit Score Classification dataset as it had many unclean columns and felt like it would be the closest to a real-life problem I might face.
+
+- Methods included are removing the outliers, filling in the null columns based on inference, oversampling the inbalanced class, and preprocessing methods in general.
+
+### Model
+
+- Used Pytorch ANN
+- Has 3 classifications
+- 21 input features
+- Trained over 600 epochs
